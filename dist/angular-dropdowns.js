@@ -154,7 +154,7 @@
           var $wrap = $compile(
             angular.element($templateCache.get('autorizatieIsuDropdowns/templates/dropdownMenuWrap.html'))
           )($scope);
-          $element.addClass('fa').addClass('fa-filter').addClass('btn');
+          $element.append('<i class="fa fa-filter"></i>').addClass('btn');
           $element.replaceWith($wrap);
           $wrap.append($element);
           $wrap.append($template);
