@@ -46,15 +46,15 @@ app.controller('AppCtrl', function($scope) {
   $scope.ddMenuSelected = {};
   $scope.ddMenuOptions2 = [
     {
-      name: 'Option2-1 Name',
+      name: 'times',
       iconCls: 'someicon'
     }, {
-      name: 'Option2-2 Name'
+      name: 'check'
     }, {
       divider: true
     }, {
       name: 'A link',
-      href: 'http://www.google.com'
+      href: 'x'
     }
   ];
 

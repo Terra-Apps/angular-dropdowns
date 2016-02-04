@@ -46,11 +46,11 @@
 
     $templateCache.put('ngDropdowns/templates/dropdownMenuItem.html', [
       '<li ng-class="{divider: dropdownMenuItem.divider, \'divider-label\': dropdownMenuItem.divider && dropdownMenuItem[dropdownItemLabel]}">',
-      '<a href="" class="dropdown-item"',
+      '<a href="" class="dropdown-item fa fa-{{dropdownMenuItem[dropdownItemLabel]}}"',
       ' ng-if="!dropdownMenuItem.divider"',
       ' ng-href="{{dropdownMenuItem.href}}"',
       ' ng-click="selectItem()">',
-      '{{dropdownMenuItem[dropdownItemLabel]}}',
+      //'<i class="fa fa-{{dropdownMenuItem[dropdownItemLabel]}}"></i>',
       '</a>',
       '<span ng-if="dropdownMenuItem.divider">',
       '{{dropdownMenuItem[dropdownItemLabel]}}',
@@ -59,7 +59,7 @@
     ].join(''));
 
     $templateCache.put('ngDropdowns/templates/dropdownMenuWrap.html',
-      '<div class="wrap-dd-menu" ng-class="{\'disabled\': dropdownDisabled}"></div>'
+      '<div class="isu-filter-btn" ng-class="{\'disabled\': dropdownDisabled}"></div>'
     );
   }]);
 
@@ -155,7 +155,7 @@
           var $wrap = $compile(
             angular.element($templateCache.get('ngDropdowns/templates/dropdownMenuWrap.html'))
           )($scope);
-
+          $element.addClass('fa').addClass('fa-filter').addClass('btn');
           $element.replaceWith($wrap);
           $wrap.append($element);
           $wrap.append($template);

@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var stylish = require('jshint-stylish');
 var minifyCss = require('gulp-minify-css');
 var ghPages = require('gulp-gh-pages');
+var connect = require('gulp-connect');
 
 var srcFile = 'angular-dropdowns.js';
 var srcCss = 'angular-dropdowns.css';
@@ -61,4 +62,8 @@ gulp.task('pages', ['default'], function () {
 
 gulp.task('clean', function () {
   return del([distDir + '/*']);
+});
+
+gulp.task('webserver', ['dev'], function() {
+  connect.server();
 });
