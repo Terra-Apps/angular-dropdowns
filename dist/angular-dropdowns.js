@@ -4,10 +4,10 @@
 (function (window, angular) {
   'use strict';
 
-  var dd = angular.module('ngDropdowns', []);
+  var dd = angular.module('autorizatieIsuDropdowns', []);
 
   dd.run(['$templateCache', function ($templateCache) {
-    $templateCache.put('ngDropdowns/templates/dropdownSelect.html', [
+    $templateCache.put('autorizatieIsuDropdowns/templates/dropdownSelect.html', [
       '<div ng-class="{\'disabled\': dropdownDisabled}" class="wrap-dd-select" tabindex="0">',
       '<span class="selected">{{dropdownModel[labelField]}}</span>',
       '<ul class="dropdown">',
@@ -20,7 +20,7 @@
       '</div>'
     ].join(''));
 
-    $templateCache.put('ngDropdowns/templates/dropdownSelectItem.html', [
+    $templateCache.put('autorizatieIsuDropdowns/templates/dropdownSelectItem.html', [
       '<li ng-class="{divider: (dropdownSelectItem.divider && !dropdownSelectItem[dropdownItemLabel]), \'divider-label\': (dropdownSelectItem.divider && dropdownSelectItem[dropdownItemLabel])}">',
       '<a href="" class="dropdown-item"',
       ' ng-if="!dropdownSelectItem.divider"',
@@ -34,7 +34,7 @@
       '</li>'
     ].join(''));
 
-    $templateCache.put('ngDropdowns/templates/dropdownMenu.html', [
+    $templateCache.put('autorizatieIsuDropdowns/templates/dropdownMenu.html', [
       '<ul class="dropdown">',
       '<li ng-repeat="item in dropdownMenu"',
       ' class="dropdown-item"',
@@ -44,21 +44,20 @@
       '</ul>'
     ].join(''));
 
-    $templateCache.put('ngDropdowns/templates/dropdownMenuItem.html', [
+    $templateCache.put('autorizatieIsuDropdowns/templates/dropdownMenuItem.html', [
       '<li ng-class="{divider: dropdownMenuItem.divider, \'divider-label\': dropdownMenuItem.divider && dropdownMenuItem[dropdownItemLabel]}">',
-      '<a href="" class="dropdown-item fa fa-{{dropdownMenuItem[dropdownItemLabel]}}"',
+      '<span class="dropdown-item fa fa-{{dropdownMenuItem[dropdownItemLabel]}}"',
       ' ng-if="!dropdownMenuItem.divider"',
-      ' ng-href="{{dropdownMenuItem.href}}"',
       ' ng-click="selectItem()">',
       //'<i class="fa fa-{{dropdownMenuItem[dropdownItemLabel]}}"></i>',
-      '</a>',
+      '</span>',
       '<span ng-if="dropdownMenuItem.divider">',
       '{{dropdownMenuItem[dropdownItemLabel]}}',
       '</span>',
       '</li>'
     ].join(''));
 
-    $templateCache.put('ngDropdowns/templates/dropdownMenuWrap.html',
+    $templateCache.put('autorizatieIsuDropdowns/templates/dropdownMenuWrap.html',
       '<div class="isu-filter-btn" ng-class="{\'disabled\': dropdownDisabled}"></div>'
     );
   }]);
@@ -102,7 +101,7 @@
             DropdownService.unregister($element);
           });
         }],
-        templateUrl: 'ngDropdowns/templates/dropdownSelect.html'
+        templateUrl: 'autorizatieIsuDropdowns/templates/dropdownSelect.html'
       };
     }
   ]);
@@ -126,7 +125,7 @@
           };
         },
 
-        templateUrl: 'ngDropdowns/templates/dropdownSelectItem.html'
+        templateUrl: 'autorizatieIsuDropdowns/templates/dropdownSelectItem.html'
       };
     }
   ]);
@@ -147,13 +146,13 @@
         controller: ['$scope', '$element', function ($scope, $element) {
           $scope.labelField = $scope.dropdownItemLabel || 'text';
 
-          var $template = angular.element($templateCache.get('ngDropdowns/templates/dropdownMenu.html'));
+          var $template = angular.element($templateCache.get('autorizatieIsuDropdowns/templates/dropdownMenu.html'));
           // Attach this controller to the element's data
           $template.data('$dropdownMenuController', this);
 
           var tpl = $compile($template)($scope);
           var $wrap = $compile(
-            angular.element($templateCache.get('ngDropdowns/templates/dropdownMenuWrap.html'))
+            angular.element($templateCache.get('autorizatieIsuDropdowns/templates/dropdownMenuWrap.html'))
           )($scope);
           $element.addClass('fa').addClass('fa-filter').addClass('btn');
           $element.replaceWith($wrap);
@@ -205,7 +204,7 @@
           };
         },
 
-        templateUrl: 'ngDropdowns/templates/dropdownMenuItem.html'
+        templateUrl: 'autorizatieIsuDropdowns/templates/dropdownMenuItem.html'
       };
     }
   ]);

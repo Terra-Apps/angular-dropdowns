@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['ngDropdowns']);
+var app = angular.module('app', ['autorizatieIsuDropdowns']);
 
 app.controller('AppCtrl', function($scope) {
   $scope.ddSelectOptions = [
