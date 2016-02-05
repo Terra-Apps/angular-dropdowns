@@ -48,7 +48,7 @@
       '<li ng-class="{divider: dropdownMenuItem.divider, \'divider-label\': dropdownMenuItem.divider && dropdownMenuItem[dropdownItemLabel]}">',
       '<span class="dropdown-item fa fa-{{dropdownMenuItem[dropdownItemLabel]}}"',
       ' ng-if="!dropdownMenuItem.divider"',
-      ' ng-click="selectItem()">',
+      ' ng-click="selectItem()" ng-style=\'{color: "#" + dropdownMenuItem.color }\'>',
       //'<i class="fa fa-{{dropdownMenuItem[dropdownItemLabel]}}"></i>',
       '</span>',
       '<span ng-if="dropdownMenuItem.divider">',

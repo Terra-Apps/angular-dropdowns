@@ -47,14 +47,17 @@ app.controller('AppCtrl', function($scope) {
   $scope.ddMenuOptions2 = [
     {
       name: 'times',
-      iconCls: 'someicon'
+      iconCls: 'someicon',
+      color: '000'
     }, {
-      name: 'check'
+      name: 'check',
+      color: '888'
     }, {
       divider: true
     }, {
       name: 'A link',
-      href: 'x'
+      href: 'x',
+      color: 'fff'
     }
   ];
 
